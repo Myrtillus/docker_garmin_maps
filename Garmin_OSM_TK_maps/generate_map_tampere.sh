@@ -21,6 +21,7 @@ cd /Garmin_OSM_TK_maps
 
 wget --user-agent Mozilla/5.0 --header="Host: kartta.arpotechno.fi" --header="Referer: http://kartta.arpotechno.fi (antti@myrtillus.net)" -O tampere.osm "http://www.overpass-api.de/api/xapi_meta?*[bbox=22.8,61.05,25,61.7881]"
 
+sleep 10
 
 # Split the osm file to smaller pieces
 

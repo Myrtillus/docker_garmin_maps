@@ -25,4 +25,7 @@ Tampereen karttojen generointi komennolla:
 sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_tampere.sh
 
 
+yritin päivittää splitterin ja mkgmap jar paketit, mutta törmäsin ongelmiin, nykyinen Java ympräristö on java 7, millä vanhat koodit ainakin toimivat.
+
+
 
