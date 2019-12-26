@@ -2,7 +2,7 @@
 
 cd /Garmin_OSM_TK_maps
 
-# Update the style files before generation
+# Update the style files before generation................
 #sudo -u nissiant git pull
 
 # TAMPERE
