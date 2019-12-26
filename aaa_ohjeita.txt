@@ -1,0 +1,15 @@
+
+GIT repoon ei ole sisällytetty isoja zippi fileitä, sillä githubissa on 100 megan kokorajoitus yksittäiselle fileelle
+Reposta puuttuvat siis seuraavat tiedostot:
+
+Garmin_OSM_TK_maps/bounds.zip
+Garmin_OSM_TK_maps/sea.zip
+Garmin_OSM_TK_maps/cities15000.zip
+
+tiedostot bounds.zip ja sea.zip saa ladattua seuraavasta osoitteesta:
+https://www.mkgmap.org.uk/download/mkgmap.html
+- muuta nimet siten, että "latest" on poistettu
+
+ja cities löytyy tuolta
+http://download.geonames.org/export/dump/cities15000.zip
+

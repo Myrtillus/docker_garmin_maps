@@ -1,0 +1,39 @@
+
+########## buildaa docker image Docker fileestä
+sudo docker build -t garminmaps .
+
+# start container from image with interactive terminal
+sudo docker run -i -t garminmaps /bin/sh
+
+# copy files from container to local host
+sudo docker cp d0da2ae9c990:/Garmin_OSM_TK_maps/tampere.osm .
+
+# copy files from local host to container to local host
+sudo docker cp tampere.osm 8170968d47c6:/Garmin_OSM_TK_maps/tampere.osm
+
+
+# restart a container
+sudo docker start d0da2ae9c990 -i
+
+
+# delete container after running fron the image
+docker run --rm my-docker
+
+# Run container with mapping to local host, jumping to terminal
+sudo docker run -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /bin/sh
+
+# Running map generation
+sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map.sh
+
+
+
+# Remove all containers and images
+sudo docker system prune --volumes
+sudo docker image prune -a
+
+
+# git repository, files and sizes
+git ls-tree -r -t -l --full-name HEAD | sort -n -k 4 | tail -n 10
+
+
+

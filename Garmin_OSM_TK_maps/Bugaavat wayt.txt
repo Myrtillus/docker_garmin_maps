@@ -1,0 +1,14 @@
+http://www.openstreetmap.org/way/122251134
+highway 	track
+mtb:scale 	0
+surface 	mud
+tracktype 	grade4
+Vain zoom-tasot >=24
+
+http://www.openstreetmap.org/way/390651983
+highway 	path
+mtb:scale 	1
+note 		talvella hienosti ajettavaa, jos ei ole latua alla
+source 		gps
+surface 	mud
+Vain zoom-tasot >=24

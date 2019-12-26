@@ -1,0 +1,33 @@
+*******************************************************************************
+cGPSmapper a GIS converter into GARMIN compatible format maps
+Version : 0100d Aug  9 2014
+Copyright(C) Stanislaw Kozicki, 2000-2012
+cgpsmapper@gmail.com
+
+THIS IS A FREE / SHAREWARE / PERSONAL VERSION OF CGPSMAPPER - YOU CAN USE 
+IT ONLY IF YOU AGREE WITH CGPSMAPPER NON COMMERCIAL LICENCE TERMS OF USE
+BE SURE TO READ LICENCE.TXT FILE WHICH COMES TOGETHER WITH CGPSMAPPER
+OR GO TO HTTP://CGPSMAPPER.COM
+*******************************************************************************
+Non Commercial only - Free cGPSmapper version with extended set of types
+*******************************************************************************
+Custom type definition    : YES
+ESRI data support         : NO
+POI full info             : NO
+POI indexing              : NO
+City indexing             : NO
+Find intersection support : NO
+Street numbers support    : NO
+Street full address       : NO
+Global indexing support   : NO
+Auto-routing support      : NO
+Marine (extended) types   : YES
+Map locking support       : NO
+*******************************************************************************
+          Garmin and MapSource are registered trademark or trademarks of
+                     Garmin Ltd. or one of its subsidiaries.
+*******************************************************************************
+              cGPSMapper home page: http://cgpsmapper.com 
+*******************************************************************************
+Execution time: 0.00 s
+
