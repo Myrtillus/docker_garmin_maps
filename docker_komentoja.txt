@@ -23,7 +23,7 @@ docker run --rm my-docker
 sudo docker run -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /bin/sh
 
 # Running map generation
-sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map.sh
+sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_tampere.sh
 
 
 

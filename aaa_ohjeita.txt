@@ -13,3 +13,16 @@ https://www.mkgmap.org.uk/download/mkgmap.html
 ja cities löytyy tuolta
 http://download.geonames.org/export/dump/cities15000.zip
 
+
+***********************************************************************
+
+Kun GIT repo on kloonattu, niin imagen buildaaminen seuraavasti:
+sudo docker build -t garminmaps .
+
+
+Tampereen karttojen generointi komennolla:
+- muuta levymäppi siten, että vastaa ajoympäristöä omalla koneella
+sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_tampere.sh
+
+
+
