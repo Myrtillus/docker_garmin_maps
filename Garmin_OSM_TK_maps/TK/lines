@@ -7,6 +7,14 @@
 # See http://wiki.openstreetmap.org/wiki/Mkgmap/help/style_rules
 # and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
 # for more information.
+#
+#
+#
+#
+#
+#
+#
+#
 
 
 ##############################################################################################################################
@@ -121,7 +129,18 @@ mtb:scale="4-" | mtb:scale="4+" {set mtb:scale=4}
 mtb:scale="5-" | mtb:scale="5+" {set mtb:scale=5}
 highway=* & mtb:scale!=* {set mtb:scale=no}
 trail_visibility=bad | trail_visibility=horrible | trail_visibility=no {delete trail_visibility; set bad_vis=yes}
-surface!=mud {delete surface}
+
+
+
+
+
+
+#######################################surface!=mud {delete surface}    # pitanee olla myos joku tagi, joka osuu, pelkka kielto ei toimi!!
+highway=path & surface!=mud {delete surface}
+
+
+
+
 
 ###################################################################
 ### Cycleways

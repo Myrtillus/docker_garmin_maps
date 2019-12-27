@@ -6,10 +6,10 @@ sudo docker build -t garminmaps .
 sudo docker run -i -t garminmaps /bin/sh
 
 # copy files from container to local host
-sudo docker cp d0da2ae9c990:/Garmin_OSM_TK_maps/tampere.osm .
+sudo docker cp e95b222a5e19:/Garmin_OSM_TK_maps/tampere.osm .
 
 # copy files from local host to container to local host
-sudo docker cp tampere.osm 8170968d47c6:/Garmin_OSM_TK_maps/tampere.osm
+sudo docker cp tampere.osm d0b1337dd026:/Garmin_OSM_TK_maps/tampere.osm
 
 
 # restart a container
@@ -20,10 +20,10 @@ sudo docker start d0da2ae9c990 -i
 docker run --rm my-docker
 
 # Run container with mapping to local host, jumping to terminal
-sudo docker run -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /bin/sh
+sudo docker run -v /home/antti/docker_containers/Garmin_maps_java8:/ready_maps -i -t garminmaps /bin/sh
 
 # Running map generation
-sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_tampere.sh
+sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps_java8:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_tampere.sh
 
 
 

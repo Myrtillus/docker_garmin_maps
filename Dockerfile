@@ -1,5 +1,5 @@
 # The base image
-FROM openjdk:7-alpine
+FROM openjdk:8-alpine
 
 # ubuntu version
 #RUN apt-get --yes update
