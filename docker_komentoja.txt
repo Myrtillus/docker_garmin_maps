@@ -22,9 +22,11 @@ docker run --rm my-docker
 # Run container with mapping to local host, jumping to terminal
 sudo docker run -v /home/antti/docker_containers/Garmin_maps_java8:/ready_maps -i -t garminmaps /bin/sh
 
-# Running map generation
+# Running map generation, Tampere
 sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps_java8:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_tampere.sh
 
+# Running map generation, Lahti
+sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps_java8:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_lahti.sh
 
 
 # Remove all containers and images
