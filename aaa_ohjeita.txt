@@ -25,6 +25,16 @@ Tampereen karttojen generointi komennolla:
 sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /Garmin_OSM_TK_maps/generate_map_tampere.sh
 
 
+# Jos on tarvetta debuggailla enemmän, niin
 
+# Käynnistä kontti ilman skriptiä ja hyppää shelliin
+sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /bin/sh
 
+# kopsaa olemassa oleva osm file toisesta terminaalista käyvään konttiin 
+# listaa ensin ajossa olevat kontit
+docker container list
+# ota container ID talteen ja vaihda alla olevaan oikea
+docker cp tampere.osm 0f9fa2575bd4:/Garmin_OSM_TK_maps/tampere.osm
 
+# ajele karttaskripti ilman osm fileen latausta
+./generate_map_ilman_latausta.sh
