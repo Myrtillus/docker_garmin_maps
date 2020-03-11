@@ -1,17 +1,19 @@
-# The base image
-FROM openjdk:8-alpine
-
-# ubuntu version
-#RUN apt-get --yes update
-
 # alpine linux
-RUN apk update
+#FROM openjdk:8-alpine
+#RUN apk update
+#RUN apk add --no-cache python3
+#RUN apk add --no-cache git
 
-#RUN apt-get --yes install python3
 
-RUN apk add --no-cache python3
+# Ubuntu version
+FROM ubuntu:18.04
+RUN apt-get --yes update
+RUN apt-get install --yes apt-utils openjdk-8-jdk python3 osmosis 
+RUN apt-get install --yes wget
 
-RUN apk add --no-cache git
+#RUN apt-get install --yes openjdk-8-jdk
+#RUN apt-get install --yes python3
+#RUN apt-get install --yes osmosis 	
 
 COPY Garmin_OSM_TK_maps/ /Garmin_OSM_TK_maps
 COPY .git/ /.git
