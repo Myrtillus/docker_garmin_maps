@@ -30,11 +30,44 @@ sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i
 # Käynnistä kontti ilman skriptiä ja hyppää shelliin
 sudo docker run --rm -v /home/antti/docker_containers/Garmin_maps:/ready_maps -i -t garminmaps /bin/sh
 
-# kopsaa olemassa oleva osm file toisesta terminaalista käyvään konttiin 
-# listaa ensin ajossa olevat kontit
+ALLA SEKALAISIA MUISTIINPANOJA
+******************************
+
+# kartan laskenta kontin ulkopuolella ladatusta osm tiedostosta
+# -------------------------------------------------------
+
+# listaa ensin ajossa olevat kontit ja ota container ID talteen ja vaihda alla olevaan oikea
 docker container list
-# ota container ID talteen ja vaihda alla olevaan oikea
-docker cp tampere.osm 0f9fa2575bd4:/Garmin_OSM_TK_maps/tampere.osm
+
+# kopioi osm tiedosto ajossa olevaan konttiin
+docker cp tampere.osm CONTAINERID:/Garmin_OSM_TK_maps/tampere.osm
 
 # ajele karttaskripti ilman osm fileen latausta
 ./generate_map_ilman_latausta.sh
+
+
+# restartti olemassa olevalle kontille ja hyppy sisään
+# -------------------------------------------------------
+
+# listaus kaikista olemassa olevista konteista
+docker ps -all
+
+# käynnistä haluttu
+docker start CONTAINERID_OR_NAME
+
+# hyppy sisään shelliin
+docker exec -it CONTAINERID_OR_NAME /bin/sh
+
+
+Esimerkkejä osm latauksista ja niiden yhdistämisestä osmosis työkalulla
+
+pohjoinen tampere
+wget --user-agent Mozilla/5.0 --header="Host: kartta.arpotechno.fi" --header="Referer: http://kartta.arpotechno.fi (antti@myrtillus.net)" -O tampere_pohjoinen.osm "http://www.overpass-api.de/api/xapi_meta?*[bbox=22.8 , 61.5 , 25 , 62]"
+
+etelainen tampere
+wget --user-agent Mozilla/5.0 --header="Host: kartta.arpotechno.fi" --header="Referer: http://kartta.arpotechno.fi (antti@myrtillus.net)" -O tampere_etelainen.osm "http://www.overpass-api.de/api/xapi_meta?*[bbox=22.8 , 61 , 25 , 61.5]"
+
+malli: https://lists.openstreetmap.org/pipermail/osmosis-dev/2013-October/001619.html
+
+osmosis --rx tampere_pohjoinen.osm --rx tampere_etelainen.osm  --merge --wx tampere_koottu.osm
+
